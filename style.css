@@ -261,6 +261,417 @@ h1 {
     font-weight: bold;
 }
 
+/* Text-based quiz options */
+.text-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 15px 25px;
+    background-color: #f5f5f5;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    min-width: 120px;
+}
+
+.option-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.text-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #e8e8e8;
+}
+
+.text-option.selected {
+    border: 2px solid #007bff;
+}
+
+.text-option.correct {
+    border-color: green;
+    background-color: #d4edda;
+}
+
+.text-option.wrong {
+    border-color: red;
+    background-color: #f8d7da;
+}
+
+/* Feedback styles for new quizzes */
+.feedback-5, .feedback-6, .feedback-7, .feedback-8,
+.feedback-9, .feedback-10, .feedback-11, .feedback-12,
+.feedback-13, .feedback-14 {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Student Tasks Section - Input Based Questions */
+.student-tasks-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 40px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tasks-title {
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.task-item {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+}
+
+.task-label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.task-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+.task-input.correct-input {
+    border-color: #28a745;
+    background-color: #d4edda;
+}
+
+.task-input.wrong-input {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label:hover {
+    background: #e8e8e8;
+    border-color: #667eea;
+}
+
+.checkbox-label input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #667eea;
+}
+
+.textarea-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+.task-textarea.correct-input {
+    border-color: #28a745;
+    background-color: #d4edda;
+}
+
+.check-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.check-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.check-btn:active {
+    transform: scale(0.98);
+}
+
+.task-feedback {
+    margin-top: 15px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    display: none;
+}
+
+.task-feedback.correct {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.task-feedback.wrong {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.task-feedback.warning {
+    display: block;
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* Drawing Canvas Styles */
+.drawing-task {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.reference-shape {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border: 2px dashed #667eea;
+}
+
+.reference-shape span {
+    font-weight: bold;
+    color: #333;
+}
+
+.reference-image {
+    width: 80px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* L-shape reference */
+.l-shape-reference {
+    display: flex;
+    flex-direction: column;
+}
+
+.l-block {
+    width: 25px;
+    height: 25px;
+    background: #667eea;
+    border: 1px solid #4a5568;
+}
+
+.l-bottom {
+    margin-left: 25px;
+}
+
+/* T-shape reference */
+.t-shape-reference {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.t-top {
+    display: flex;
+}
+
+.t-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.t-block {
+    width: 25px;
+    height: 25px;
+    background: #667eea;
+    border: 1px solid #4a5568;
+}
+
+.drawing-container {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.canvas-tools {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tool-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: #f5f5f5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tool-btn:hover {
+    background: #e8e8e8;
+    border-color: #667eea;
+}
+
+.tool-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+.tool-btn.clear-btn {
+    background: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+.tool-btn.clear-btn:hover {
+    background: #c82333;
+}
+
+.color-picker {
+    width: 40px;
+    height: 35px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.brush-size {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+}
+
+.drawing-canvas {
+    border: 3px solid #667eea;
+    border-radius: 8px;
+    cursor: crosshair;
+    background: white;
+    display: block;
+    max-width: 100%;
+    touch-action: none;
+}
+
+.large-canvas {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+}
+
+/* Responsive adjustments for Student Tasks */
+@media (max-width: 600px) {
+    .input-group, .checkbox-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .task-input {
+        min-width: 100%;
+    }
+    
+    .check-btn {
+        width: 100%;
+    }
+
+    .drawing-canvas {
+        width: 100%;
+        height: 200px;
+    }
+
+    .canvas-tools {
+        justify-content: center;
+    }
+
+    .reference-shape {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 .footer {
     background-color: #4a4a4a;
     color: white;
